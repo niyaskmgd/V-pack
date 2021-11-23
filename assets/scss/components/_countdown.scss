@@ -1,0 +1,145 @@
+/*----------------------------------------*/
+/*  07. countdown
+/*----------------------------------------*/
+.countdown {
+    &__wrap {
+        padding: 70px;
+        @include respond(md) {
+            padding: 50px;
+        }
+        @include respond(xs) {
+            padding: 20px;
+        }
+    }
+    border: 1px solid $gray-2;
+    padding: 20px 0; 
+    .single {
+        width: 25%;
+        text-align: center;
+        border-right: 1px solid $gray-2;
+        h1 {
+            font-size: 60px;
+            color: $blue;
+            @include respond(md) {
+                font-size: 40px;
+            }
+            @include respond(xs) {
+                font-size: 26px;
+            }
+        }
+        p {
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+            @include respond(md) {
+                font-size: 14px;
+            }
+            @include respond(xs) {
+                font-size: 12px;
+            }
+        }
+    }
+    &--2 {
+        padding: 0;
+        .single {
+            padding: 20px 0;
+            h1 {
+                font-size: 32px;
+                @include respond(lg) {
+                    font-size: 26px;
+                }
+            }
+            p {
+                font-size: 14px;
+                @include respond(lg) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    &__bg {
+        background: #F6F3EE;
+        padding: 130px 0;
+        @include border-radius(8px);
+        overflow: hidden;
+        @include respond(md) {
+            padding: 100px 50px;
+        }
+        @include respond(xs) {
+            padding: 80px 20px;
+        }
+    }
+}
+.cd__head--text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $heading-color;
+    font-family: $defaultfont;
+    &.mb-none-10 {
+        margin-bottom: -10px;
+    }
+    span {
+        padding: 8px 40px;
+        background: $white;
+        color: $heading-color;
+    }
+    &--2 {
+        span {
+            background: $gray-2;
+        }
+    }
+}
+.countdown__content {
+    .countdown {
+        padding: 0;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        .single {
+            background: $blue;
+            padding: 20px;
+            @include border-radius(8px);
+            @include respond(xs) {
+                padding: 15px 10px;
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+                @include respond(xs) {
+                    margin-right: 10px;
+                }
+            }
+            h1 {
+                color: $white;
+                font-size: 40px;
+                @include respond(xs) {
+                    font-size: 20px;
+                }
+            }
+            p {
+                color: $white;
+            }
+        }
+    }
+}
+.countdown__img {
+    img {
+        &:nth-child(1) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        &:nth-child(2) {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            @include transform(translateY(-50%));
+        }
+        @include respond(lg) {
+            max-width: 200px;
+        }
+        @include respond(md) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+/*----------------------------------------*/
+/*  06. banner
+/*----------------------------------------*/
+.banner {
+    &__single {
+        overflow: hidden;
+        img {
+            @include transition(.3s);
+        }
+        &:hover {
+            img {
+                @include transform(scale(1.03));
+            }
+        }
+    }
+	&__content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50px;
+        right: 50px;
+        @include respond(laptop) {
+            left: 25px;
+        }
+        @include respond(lg) {
+            left: 25px;
+        }
+        .banner__title {
+            font-size: 40px;
+            color: $white;
+            margin-bottom: 10px;
+            @include respond(laptop) {
+                font-size: 30px;
+                margin-bottom: 4px;
+            }
+            @include respond(lg) {
+                font-size: 25px;
+                margin-bottom: 4px;
+            }
+        }
+        .banner__subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: 600;
+            @include respond(laptop) {
+                font-size: 13px;
+            }
+            @include respond(lg) {
+                font-size: 12px;
+            }
+        }
+        &--2 {
+            padding-top: 60px;
+            @include respond(xs) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .banner__title {
+                font-size: 40px;
+                color: $white;
+                margin-bottom: 12px;
+                @include respond(xs) {
+                    font-size: 30px;
+                }
+            }
+            p {
+                color: $white;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__inner {
+        margin-bottom: 70px;
+        &.banner__bg {
+            min-height: 470px;
+            background-position: center;
+            background-size: cover;
+            @include border-radius(10px);
+            border-radius: 10px;
+            @include respond(md) {
+                min-height: 380px;
+            }
+            @include respond(xs) {
+                min-height: 300px;
+            }
+            
+        }
+        .banner__img {
+            position: absolute;
+            left: 50%;
+            @include transform(translateX(-50%));
+            bottom: -70px;
+            @include respond(xs) {
+                bottom: -40px;
+            }
+        }
+        &--2 {
+            .banner__img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include respond(laptop) {
+                    max-width: 600px;
+                }
+                @include respond(lg) {
+                    max-width: 500px;
+                }
+                @include respond(md) {
+                    max-width: 300px;
+                }
+                @include respond(md) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__bg--2 {
+        background: #F6F3EE;
+        padding: 140px 120px;
+        @include border-radius(8px);
+        overflow: hidden;
+        @include respond(lg) {
+            padding: 100px 60px;
+        }
+        @include respond(xs) {
+            padding: 80px 20px
+        }
+    }
+}

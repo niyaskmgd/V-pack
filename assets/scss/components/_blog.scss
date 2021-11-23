@@ -1,0 +1,534 @@
+/*----------------------------------------*/
+/*  10. blog
+/*----------------------------------------*/
+.blog {
+    &__single {
+        background: $white;
+        .blog__thumb {
+            overflow: hidden;
+            img {
+                width: 100%;
+                @include transition(.3s);
+            }
+        }
+        &:hover .blog__thumb img {
+            @include transform(scale(1.05));
+        }
+        &.blog__border {
+            border: 1px solid #F6F3EE;
+        }
+    }
+    &__content {
+        padding: 25px 28px;
+        .blog__date {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: $yellow-color;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .blog__title {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 20px;
+        }
+        .blog__btn {
+            a {
+                color: $heading-color;
+                font-weight: 600;
+                text-transform: uppercase;
+                i {
+                    padding-left: 10px;
+                    font-size: 16px;
+                    @include transition(.3s);
+                    @include transform(translateX(0) translateY(1px));
+                }
+                &:hover i {
+                    @include transform(translateX(4px) translateY(1px));
+                }
+            }
+        }
+    }
+    &__sidebar {
+        &.ml-20 {
+            @include respond(lg) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+.post__item {
+    margin-top: 50px;
+    .post__thumb {
+        img {
+            width: 100%;
+        }
+    }
+    &:hover {
+        .post__thumb img {
+            @include transform(scale(1.05));
+        }
+    }
+}
+.post__thumb {
+    overflow: hidden;
+    img {
+        @include transition(.3s);
+    }
+}
+.post__author {
+    .avatar {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+        @include border-radius(50%);
+    }
+    span {
+        font-size: 16px;
+        strong {
+            color: $heading-color;
+            font-weight: 500;
+        }
+    }
+}
+.post__content {
+    position: relative;
+    .post__title {
+        font-size: 30px;
+        line-height: 45px;
+        margin-bottom: 15px;
+        @include respond(xs) {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+.post__meta {
+    &--wrap {
+        margin-top: 24px;
+        padding-top: 14px;
+        padding-right: 45px;
+        border-top: 1px solid $gray-3;
+        @include respond(xs) {
+            padding-right: 20px;
+        }
+        .post__share {
+            font-size: 16px;
+            i {
+                padding-right: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+    li {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-right: 80px;
+        @include respond(xs) {
+            margin-right: 30px;
+        }
+        a {
+            color: $default-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+        i {
+            padding-right: 10px;
+            font-size: 14px;
+        }
+    }
+}
+.post__btn {
+    position: absolute;
+    top: -75px;
+    right: 55px;
+    a {
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+        background: $white;
+        display: inline-block;
+        box-shadow: 0px 10px 10px rgba(219, 219, 219, 0.25);
+        @include border-radius(50%);
+        color: $heading-color;
+        font-size: 18px;
+    }
+}
+.widget {
+    .widget__title {
+        font-size: 24px;
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 45px;
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            content: "";
+            background: $gray-3;
+        }
+        &::after {
+            width: 55px;
+            background: $blue;
+        }
+    }
+    .search__form {
+        position: relative;
+        input {
+            width: 100%;
+            height: 56px;
+            background: $gray-2;
+            padding: 0 20px;
+            border: 0;
+            padding-left: 50px;
+            border: 1px solid $border;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            @include transform(translateY(-50%));
+            color: $heading-color;
+            font-size: 16px;
+        }
+    }
+    &__post--item {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        .post__thumb {
+            width: 90px;
+            height: 90px;
+            @include border-radius(50%);
+            flex: 0 0 90px;
+            margin-right: 20px;
+        }
+        &:hover {
+            .post__thumb img {
+                @include transform(scale(1.05));
+            }
+        }
+        .post__title {
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 3px;
+        }
+        .post__date i {
+            padding-right: 10px;
+            font-size: 14px;
+        }
+    }
+}
+.post__category {
+    li {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        a {
+            font-size: 15px;
+            position: relative;
+            display: block;
+            color: $default-color;
+            span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include transition(.3s);
+            }
+        }
+        &:hover {
+            a,
+            span {
+                color: $heading-color;
+            }
+        }
+
+    }
+}
+.rc__comment--item {
+    position: relative;
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
+    i {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        color: $blue;
+    }
+    .author__name {
+        font-size: 15px;
+        font-family: $defaultfont;
+        font-weight: 500;
+        padding-left: 24px;
+        margin-bottom: 10px;
+    }
+}
+.post__tags {
+    margin: -5px;
+    li {
+        padding: 5px;
+        a {
+            font-size: 12px;
+            color: $default-color;
+            line-height: 1;
+            padding: 10px 18px;
+            border: 1px solid $gray-3;
+            @include transition(.3s);
+            display: inline-block;
+            @include border-radius(30px);
+            text-transform: uppercase;
+            font-weight: 500;
+            &:hover {
+                color: $white;
+                background-color: $blue;
+                border-color: $blue;
+            }
+        }
+    }
+}
+.post__content {
+    &--wrap {
+        img {
+            width: 100%;
+        }
+        p {
+            font-size: 18px;
+            line-height: 30px;
+            margin-bottom: 25px;
+        }
+        .sub__title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+    }
+}
+.blog__post--footer {
+    border-top: 1px solid #F7F7F7;
+    padding-top: 40px;
+    margin-top: 90px;
+    .title {
+        font-size: 24px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+}
+.related__tag {
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        a {
+            line-height: 1;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #7E8285;
+            padding: 10px 18px;
+            border: 1px solid $border;
+            @include transition(.3s);
+            display: inline-block;
+            @include border-radius(30px);
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+                border-color: $theme-color;
+            }
+        }
+    }
+}
+.social__share {
+    @include respond(xs) {
+        margin-top: 20px;
+    }
+    .title {
+        text-align: right;
+        @include respond(xs) {
+            text-align: left;
+        }
+    }
+    li {
+        display: inline-block;
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+        a {
+            font-size: 16px;
+            color: $gray;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}
+.post_nav {
+    border-top: 1px solid #F7F7F7;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #F7F7F7;
+    span {
+        color: $gray;
+    }
+    .np_title {
+        font-size: 26px;
+        font-family: $defaultfont;
+        font-weight: 500;
+        color: $black;
+    }
+    .prev_post {
+        padding-right: 30px;
+        @include respond(xs) {
+            padding-right: 0;
+        }
+    }
+    .next_post {
+        text-align: right;
+        padding-left: 30px;
+        @include respond(xs) {
+            padding-left: 0;
+            text-align: left;
+            margin-top: 30px;
+        }
+    }
+}
+.navigation-border {
+	border-top: 1px solid $border;
+	overflow: hidden;
+}
+/* comment css */
+.post-comments {
+    padding-bottom: 55px;
+    .title {
+        font-size: 26px;
+        margin-bottom: 25;
+    }
+}
+
+.latest__comments {
+    .comments-box {
+        border-top: 1px solid $border;;
+        padding: 30px 0;
+    }
+    .comments-text {
+        overflow: hidden;
+        p {
+            color: $black;
+        }
+    }
+    .comments-avatar {
+        border-radius: 50%;
+        float: left;
+        @include respond(xs) {
+            float: none;
+            margin-bottom: 10px;
+        }
+        @include respond(sm) {
+            float: left;
+            margin-bottom: 0px
+        }
+        img {
+            border-radius: 50%;
+            width: 100px !important;
+            margin-right: 30px;
+        }
+    }
+    li {
+        &:last-child .comments-box {
+            padding-bottom: 0px;
+        }
+        &:first-child .comments-box {
+            border-top: 0;
+            padding-top: 0;
+        }
+        &.children {
+            margin-left: 100px;
+            @include respond(xs) {
+                margin-left: 0px;
+            }
+            @include respond(sm) {
+                margin-left: 50px;
+            }
+        }
+    }
+
+    .avatar-name {
+        margin-bottom: 15px;
+        overflow: hidden;
+        position: relative;
+        h5 {
+            font-size: 18px;
+            margin-bottom: 0px;
+            font-weight: 600;
+            font-family: $defaultfont;
+        }
+        span {
+            font-size: 14px;
+            color: $black;
+        }
+    }
+    .reply {
+        color: $black;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 400;
+        @include transition(.3s);
+        line-height: 1;
+        position: absolute;
+        right: 0;
+        margin-top: 0;
+        top: 0;
+        text-decoration: none;
+        i {
+            margin-right: 5px;
+        }
+        &:hover {
+            color: $theme-color;
+        }
+    }
+    &--2 {
+        p {
+            font-size: 14px;
+            line-height: 24px;
+            color: $black
+        }
+    }
+}
+.comments__form {
+    .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .form {
+        input, textarea {
+            height: 78px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            width: 100%;
+            font-size: 15px;
+            color: $black;
+            border-radius: 0px;
+            background: $white;
+            border: 1px solid $border;
+            @include respond(xs) {
+                height: 60px;
+            }
+        }
+        textarea {
+            padding: 20px;
+            height: 200px;
+            @include respond(xs) {
+                height: 150px;
+            }
+        }
+    }
+}

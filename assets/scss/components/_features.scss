@@ -1,0 +1,93 @@
+/*----------------------------------------*/
+/*  09. features
+/*----------------------------------------*/
+.feature__single {
+    background: $white;
+    padding: 30px 25px;
+    min-height: 146px;
+    .feat__icon {
+        width: 70px;
+        margin-right: 20px;
+    }
+    .feat__content {
+        width: calc(100% - 90px);
+    }
+    .feat__title {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        font-family: $defaultfont;
+        font-weight: 600;
+    }
+    &--2 {
+        margin-top: 20px;
+        justify-content: center;
+        padding-bottom: 40px;
+        position: relative;
+        min-height: 100px;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: "";
+            background: $yellow-color;
+            width: 0;
+            height: 2px;
+            @include transition(all 0.4s cubic-bezier(0.65, 0.05, 0.18, 0.99));
+        }
+        &:hover::before  {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+        .feat__icon {
+            position: relative;
+            z-index: 1;
+            padding-left: 25px;
+            margin-right: 18px;
+            max-width: 75px;
+            &::before {
+                position: absolute;
+                top: -5px;
+                left: 0;
+                content: "";
+                width: 55px;
+                height: 55px;
+                z-index: -1;
+                @include border-radius(50%);
+            }
+            &.color-1 {
+                &::before {
+                    background: rgba($color: $yellow-color, $alpha: 0.15);
+                }
+            }
+            &.color-2 {
+                &::before {
+                    background: rgba($color: $theme-color, $alpha: 0.15);
+                }
+            }
+            &.color-3 {
+                &::before {
+                    background: rgba($color: $green, $alpha: 0.15);
+                }
+            }
+            &.color-4 {
+                &::before {
+                    background: rgba($color: $red, $alpha: 0.15);
+                }
+            }
+        }
+        .feat__title {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: $defaultfont;
+            font-weight: 600;
+        }
+    }
+    &.feature__border {
+        border: 1px solid $gray-3;
+    }
+}
+.feature__carousel--active {
+    border-bottom: 1px solid #E4E1DB;
+}

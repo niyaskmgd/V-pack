@@ -1,0 +1,85 @@
+/*----------------------------------------*/
+/*  15. process
+/*----------------------------------------*/
+.process {
+    &__img {
+        img {
+            @include border-radius(8px);
+        }
+        &.mr-none-30 {
+            margin-right: -30px;
+            @include respond(lg) {
+                margin-right: 0;
+            }
+        }
+    }
+    &__content {
+        &.content__right {
+            padding-left: 150px;
+            @include respond(laptop) {
+                padding-left: 100px;
+            }
+            @include respond(lg) {
+                padding-left: 30px;
+            }
+            @include respond(md) {
+                padding-left: 0;
+            }
+        }
+        &.content__left {
+            padding-right: 130px;
+            @include respond(laptop) {
+                padding-right: 100px;
+            }
+            @include respond(lg) {
+                padding-right: 30px;
+            }
+            @include respond(md) {
+                padding-right: 0;
+            }
+        }
+        .procs__title {
+            font-size: 40px;
+            margin-bottom: 23px;
+            @include respond(xs) {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+        }
+        &--left {
+            .title {
+                font-size: 40px;
+                line-height: 50px;
+                margin-bottom: 20px;
+                @include respond(xs) {
+                    font-size: 24px;
+                    line-height: 36px;
+                }
+            }
+        }
+        &--right {
+            padding-left: 150px;
+            @include respond(laptop) {
+                padding-left: 100px;
+            }
+            @include respond(lg) {
+                padding-left: 30px;
+            }
+            @include respond(md) {
+                padding-left: 0;
+            }
+            .title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__list {
+        padding-left: 14px;
+        li {
+            color: $heading-color;
+            line-height: 26px;
+            font-weight: 500;
+        }
+    }
+}

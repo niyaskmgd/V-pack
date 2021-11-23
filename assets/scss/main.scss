@@ -1,0 +1,80 @@
+/*-----------------------------------------------------------------------------------
+
+    Project Name: Frshbaz - Organic food HTML Template
+    Author: XpressRow -->> (https://themeforest.net/user/xpressrow)
+    Support: xpressrow@gmail.com
+    Description: Organic food HTML Template 
+    Developer: Mohammad Wasim Mia -->> (wasimmia.info@gmail.com)
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+	01. Theme default CSS
+    02. header
+    03. slider
+    04. category
+    05. product
+    06. banner
+    07. countdown
+    08. testimonial
+    09. features
+    10. blog
+    11. footer
+    12. about
+    13. page title
+    14. team
+    15. process
+    16. history
+    17. contact
+    18. preloder
+
+-----------------------------------------------------------------------------------*/
+// abstracts scss
+@import
+    'abstracts/mixins',
+    'abstracts/variables';
+
+// base scss
+@import 
+    'base/fonts',
+    'base/base',
+    'base/spacing',
+    'base/typography',
+    'base/overlay';
+
+// layout scss
+@import 
+    'layout/header',
+    'layout/navigation';
+ 
+// components scss
+@import 
+    'components/social-links',
+    'components/buttons',
+    'components/side-cart',
+    'components/backtotop',
+    'components/slider',
+    'components/category',
+    'components/product',
+    'components/banner',
+    'components/countdown',
+    'components/testimonial',
+    'components/features',
+    'components/blog',
+    'components/offer',
+    'components/about',
+    'components/page-title',
+    'components/team',
+    'components/process',
+    'components/history',
+    'components/contact',
+    'components/search',
+    'components/account',
+    'components/preloder';
+
+// layout scss
+@import 
+    'layout/footer';

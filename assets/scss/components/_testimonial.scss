@@ -1,0 +1,91 @@
+/*----------------------------------------*/
+/*  08. testimonial
+/*----------------------------------------*/
+.testimonial {
+    &__active {
+        padding: 0 200px;
+        @include respond(lg) {
+            padding: 0 200px;
+        }
+        @include respond(md) {
+            padding: 0 100px;
+        }
+        @include respond(xs) {
+            padding: 0;
+        }
+        .owl-nav div {
+            left: 0;
+            &.owl-next {
+                right: 0;
+            }
+        }
+        &.slider__arrow--white {
+            .owl-nav {
+                @include respond(xs) {
+                    display: flex;
+                    justify-content: center;
+                }
+                div {
+                    @include respond(xs) {
+                        position: inherit;
+                        @include transform(translateY(0));
+                        margin: 0 5px;
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+        &--2 {
+            .owl-nav {
+                div {
+                    border: 1px solid $gray-3;
+                }
+            }
+        }
+    }
+    &__item {
+        p {
+            font-size: 24px;
+            line-height: 34px;
+            color: $heading-color;
+            font-style: italic;
+        }
+        .author__title {
+            font-size: 15px;
+        }
+    }
+    &__bottom {
+        @include respond(xs) {
+            margin-top: 40px;
+        }
+    }
+    &__avatar {
+        width: 88px;
+        margin: auto;
+        margin-bottom: 30px;
+        img {
+            width: 88px;
+            height: 88px;
+            @include border-radius(50%);
+            padding: 5px;
+            background: $white;
+        }
+    }
+    &__qoute {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        span {
+            font-size: 250px;
+            color: #EFEBE3;
+        }
+    }
+}
+.testimonial__item {
+    .rating__star {
+        li {
+            font-size: 16px;
+        }
+    }
+}

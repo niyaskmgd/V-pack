@@ -1,0 +1,57 @@
+/*----------------------------------------*/
+/*  13. page title
+/*----------------------------------------*/
+.page__title {
+    &--area {
+        border-top: 1px solid $border;
+        border-bottom: 1px solid $border;
+        @include respond(xs) {
+            padding: 80px 0;
+        }
+    }
+    .title {
+        font-size: 45px;
+        @include respond(md) {
+            font-size: 35px;
+        }
+        @include respond(xs) {
+            font-size: 24px;
+        }
+    }
+}
+.breadcrumb__list {
+	background: $white;
+	display: inline-block;
+	padding: 14px 32px;
+    float: right;
+    border: 1px solid $border;
+    box-shadow: 0px 4px 4px rgba(238, 238, 238, 0.25);
+    @include border-radius(5px);
+    @include respond(xs) {
+        float: left;
+    }
+    ul {
+        li {
+            display: inline-block;
+            color: $heading-color;
+            font-size: 13px;
+            position: relative;
+            font-weight: 600;
+            text-transform: uppercase;
+            &:not(:last-child) {
+                margin-right: 8px;
+                padding-right: 10px;
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    right: -4px;
+                    content: "/";
+                    color: #98928E;
+                }
+            }
+            a {
+                color: #98928E;
+            }
+        }
+    }
+}

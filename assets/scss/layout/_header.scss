@@ -1,0 +1,320 @@
+/*----------------------------------------*/
+/*  02. header
+/*----------------------------------------*/
+.logo {
+	max-width: 180px;
+    img {
+        width: 100%;
+    }
+}
+.header {
+    &__area {
+        position: relative;
+        z-index: 3;
+        &.pt-40 {
+            @include respond(laptop) {
+                padding-top: 20px;
+            }
+            @include respond(lg) {
+                padding-top: 20px;
+            }
+            &.sticky-header {
+                @include respond(laptop) {
+                    padding-top: 10px;
+                }
+                @include respond(lg) {
+                    padding-top: 10px;
+                }
+                @include respond(md) {
+                    padding-top: 20px;
+                }
+            }
+        }
+        .header__btn {
+            margin-left: 45px;
+            @include respond(laptop) {
+                margin-left: 40px;
+            }
+            @include respond(lg) {
+                display: none;
+            }
+        }
+    }
+    &__style {
+        &--1 {
+            .container {
+                max-width: 1600px;
+            }
+            margin-bottom: 30px;
+            @include respond(xs) {
+                margin-bottom: 0;
+            }
+            .header__wrapper {
+                background: $white;
+                .header__main,
+                .header__bottom {
+                    @include respond(laptop) {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+                    @include respond(lg) {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+                    @include respond(xs) {
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                }
+                
+            }
+        }
+        &--2 {
+            .container {
+                max-width: 1600px;
+            }
+        }
+        &--3 {
+            .container {
+                max-width: 1680px;
+            }
+        }
+    }
+    &__main {
+        padding: 24px 0;
+        @include respond(laptop) {
+            padding: 15px 0;
+        }
+        @include respond(lg) {
+            padding: 15px 0;
+        }
+        @include respond(md) {
+            padding: 20px 0;
+        }
+    }
+    &__icons {
+        .icon {
+            background: none;
+            position: relative;
+            display: inline-block;
+            &:not(:first-child) {
+                margin-left: 20px;
+                @include respond(laptop) {
+                    margin-left: 15px;
+                }
+            }
+            i {
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                @include border-radius(50%);
+                @include transition(.3s);
+            }
+            sup {
+                position: absolute;
+                top: -6px;
+                right: -2px;
+                width: 26px;
+                height: 26px;
+                text-align: center;
+                line-height: 21px;
+                @include border-radius(50%);
+                color: $white;
+                border: 2px solid $white;
+            }
+            span {
+                color: $heading-color;
+                font-size: 16px;
+                margin-right: 12px;
+                font-weight: 600;
+            }
+            &--cart {
+                i {
+                    color: $green;
+                    background: rgba($green, $alpha: .15);
+                }
+                sup {
+                    background: $green;
+                }
+            }
+            &.search_icon {
+                i {
+                    color: $yellow-color;
+                    background: rgba($yellow-color, $alpha: .15);
+                }
+            }
+            &--wishlist {
+                i {
+                    color: $yellow-color;
+                    background: rgba($yellow-color, $alpha: .15);
+                }
+                sup {
+                    background: $yellow-color;
+                }
+            }
+            
+        }
+        
+    }
+    &__profile {
+        margin-left: 80px;
+        @include respond(laptop) {
+            margin-left: 25px;
+        }
+        @include respond(lg) {
+            display: none;
+        }
+        span {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .avatar__img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: $gray-3;
+            margin: 0 12px;
+            overflow: hidden;
+        }
+        i {
+            font-size: 12px;
+            font-size: 16px;
+            color: $heading-color;
+        }
+        &.dropdown-toggle::after {
+            display: none;
+        }
+    }
+    &__bottom {
+        border-top: 1px solid $border;
+    }
+    &__category {
+        width: 100%;
+        height: 115px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid $border;
+        padding-right: 50px;
+        max-width: 330px;
+        @include respond(laptop) {
+            height: 100px;
+        }
+        @include respond(lg) {
+            height: 100px;
+        }
+        .nice-select {
+            border: 0;
+            position: relative;
+            padding: 0 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $heading-color;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "\f0c9";
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 400;
+                font-size: 16px;
+                color: $heading-color;
+            }
+            &::after {
+                height: 8px;
+                width: 8px;
+                margin-top: -4px;
+                right: 2px;
+                border-color: $heading-color;
+            }
+            .list {
+                margin-top: 0;
+                width: 100%;
+                border-radius: 0;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                -ms-border-radius: 0;
+                -o-border-radius: 0;
+                max-height: 400px;
+                overflow-y: auto;
+                z-index: 5;
+                min-width: 300px;
+                li {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    &__search {
+        height: 115px;
+        padding-left: 70px;
+        border-left: 1px solid $border;
+        @include respond(laptop) {
+            height: 100px;
+            padding-left: 40px;
+        }
+        @include respond(lg) {
+            height: 100px;
+            padding-left: 40px;
+        }
+        form {
+            position: relative;
+            width: 100%;
+            input {
+                width: 100%;
+                height: 56px;
+                background: $gray-2;
+                border: 1px solid $border;
+                padding: 0 20px;
+                padding-left: 50px;
+            }
+            i {
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                @include transform(translateY(-50%));
+                color: $heading-color;
+                font-size: 16px;
+            }
+        }
+    }
+    
+}
+.dropdown-menud {
+	position: absolute;
+	top: 100%;
+	background: #fff;
+	z-index: 3;
+	right: 0;
+	width: 200px;
+	border: 1px solid;
+	padding: 20px 8px;
+}
+.sticky-header {
+	left: 0;
+	margin: auto;
+	position: fixed;
+    background: $white;
+    padding: 10px 0;
+	top: 0;
+	width: 100%;
+	border-bottom: 0;
+	box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
+	z-index: 44;
+	-webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+	animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    @include respond(md) {
+        padding: 20px 0;
+    }
+}
+@media (max-width: 1365px) {
+    .header__icons .icon span {
+        display: none;
+    }
+    .main-menu ul li:not(:last-child) {
+        margin-right: 30px !important;
+    }
+}

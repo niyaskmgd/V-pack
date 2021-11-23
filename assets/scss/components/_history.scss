@@ -1,0 +1,193 @@
+/*----------------------------------------*/
+/*  16. history
+/*----------------------------------------*/
+.history__list {
+	position: relative;
+    padding-bottom: 45px;
+    @include respond(lg) {
+        padding-bottom: 20px;
+    }
+    &::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        width: 1px;
+        background: $blue;
+        @include transform(translateX(-50%));
+        @include respond(md) {
+            @include transform(translateX(0%));
+            left: 20px;
+        }
+        @include respond(xs) {
+            display: none;
+        }
+    }
+    .count,
+    .plus {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        color: $white;
+        font-size: 15px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background: $blue;
+        z-index: 2;
+        position: relative;
+        @include border-radius(50%);
+        @include respond(xs) {
+            display: none;
+        }
+    }
+    .plus {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        @include transform(translateX(-50%));
+        font-size: 20px;
+        @include respond(md) {
+            @include transform(translateX(0%));
+            left: 0;
+        }
+    }
+    &--box {
+        position: relative;
+        margin: 0 auto 430px;
+        width: 40px;
+        @include respond(md) {
+            margin: 0;
+            margin-bottom: 445px;
+        }
+        @include respond(xs) {
+            width: auto;
+            margin-bottom: 30px;
+        }
+        &:nth-child(2n+1) {
+            .history__list--box--inner {
+                right: auto;
+                left: -567px;
+                @include respond(lg) {
+                    left: -445px;
+                }
+                @include respond(md) {
+                    right: -505px;
+                    left: auto;
+                }
+            }
+        }
+        &--inner {
+            width: 525px;
+            position: absolute;
+            top: 0;
+            right: -567px;
+            @include respond(lg) {
+                width: 410px;
+                right: -445px;
+            }
+            @include respond(md) {
+                right: -500px;
+            }
+            @include respond(xs) {
+                position: static;
+                right: 0;
+                width: 100%;
+            }
+            .thumb {
+                position: relative;
+            }
+            .year {
+                color: $white;
+                background: $theme-color;
+                font-size: 15px;
+                letter-spacing: 2px;
+                display: inline-block;
+                position: absolute;
+                bottom: -10px;
+                left: 35px;
+                text-align: center;
+                padding: 3px 20px;
+                font-weight: 500;
+            }
+            .title {
+                font-size: 30px;
+                line-height: 35px;
+                margin-bottom: 12px;
+                @include respond(xs) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+.history__details {
+    .history__img {
+        img {
+            width: 100%;
+
+        }
+    }
+    .history__title {
+        font-size: 40px;
+        margin-bottom: 20px;
+        &--sub {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 25px;
+    }
+}
+.history {
+    &__widget {
+        .widget {
+            padding: 35px;
+            border: 1px solid #F6F3EE;
+        }
+        .widget__title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    &__form {
+        input,
+        textarea {
+            width: 100%;
+            border: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f4f2ef;
+            background: #fff;
+            padding: 0;
+            height: 40px;
+            @include transition(.3s);
+            &:hover {
+                border-color: $theme-color;
+            }
+        }
+        textarea {
+            min-height: 100px;
+        }
+    }
+}
+.widget__info {
+    li {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        span {
+            font-weight: 500;
+            color: $heading-color;
+            padding-right: 3px;
+        }
+    }
+}

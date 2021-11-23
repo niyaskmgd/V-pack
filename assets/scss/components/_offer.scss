@@ -1,0 +1,59 @@
+/*----------------------------------------*/
+/*  11. offer
+/*----------------------------------------*/
+.offer__single {
+    background: $white;
+    position: relative;
+    background: $white;
+    min-height: 370px;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    z-index: 1;
+    @include border-radius(8px);
+    overflow: hidden;
+    @include respond(xs) {
+        padding: 35px;
+    }
+    .offer__title {
+        font-size: 30px;
+        line-height: 38px;
+        margin-bottom: 10px;
+        @include respond(md) {
+            font-size: 22px;
+            line-height: 33px;
+        }
+    }
+    .offer__content {
+        max-width: 300px;
+    }
+    .offer__img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        @include respond(laptop) {
+            max-width: 300px;
+        }
+        @include respond(lg) { 
+            max-width: 220px;
+        }
+        @include respond(md) {
+            max-width: 180px;
+        }
+    }
+    &--1 {
+        text-align: right;
+        justify-content: flex-end;
+    }
+    &--2 {
+        .offer__img {
+            left: auto;
+            right: 0;
+        }
+    }
+    &.offer__bg {
+        background: #F6F3EE;
+    }
+
+}

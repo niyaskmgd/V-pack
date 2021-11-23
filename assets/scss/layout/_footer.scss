@@ -1,0 +1,145 @@
+/*----------------------------------------*/
+/*  12. footer
+/*----------------------------------------*/
+.footer {
+    &__area {
+        .container {
+            max-width: 1580px;
+        }
+        .footer__top {
+            border-bottom: 1px solid $gray-2;
+            padding: 65px 0;
+            @include respond(laptop) {
+                padding: 35px 0;
+            }
+            @include respond(lg) {
+                padding: 35px 0;
+            }
+            .social__links {
+                @include respond(xs) {
+                    justify-content: flex-start;
+                }
+            }
+        }
+        .footer__main {
+            padding: 65px 0;
+            @include respond(xs) {
+                padding: 50px 0;
+            }
+        }
+        .footer__bottom {
+            padding: 30px 0;
+            &--border {
+                border-top: 1px solid $gray-2;
+            }
+        }
+    }
+    &__widget {
+        .widget__title {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+            font-family: $defaultfont;
+            font-weight: 600;
+            @include respond(lg) {
+                font-size: 16px;
+            }
+            @include respond(xs) {
+                font-size: 18px;
+            }
+        }
+        ul {
+            li {
+                a {
+                    color: $default-color;
+                    line-height: 31px;
+                    @include respond(lg) {
+                        font-size: 14px;
+                    }
+                    @include respond(xs) {
+                        font-size: 15px;
+                    }
+                    &:hover {
+                        color: $heading-color;
+                    }
+                }
+            }
+        }
+    }
+    &__style--2 {
+        .footer__top {
+            border-bottom: 1px solid #E4E1DB;
+        }
+        .footer__bottom--border {
+            border-top: 1px solid #E4E1DB;
+        }
+        .newslatter__form > input {
+            background-color: $white;
+        }
+        .check__box input {
+            border: 1px solid $gray;
+        }
+    }
+}
+.newslatter__form {
+    position: relative;
+    & > input {
+        background: $gray-2;
+        width: 100%;
+        height: 55px;
+        border: 0;
+        padding: 0 20px;
+    }
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 55px;
+        @include respond(lg) {
+            position: inherit;
+            margin-top: 10px;
+        }
+    }
+    &--2 {
+        & > input,
+        button {
+            @include border-radius(30px);
+        }
+    }
+}
+.check__box {
+    @include respond(md) {
+        margin-top: 15px;
+    }
+    input {
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        background: $gray-2;
+        appearance: none;
+        position: relative;
+        transform: translateY(3px);
+        &::before {
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            content: "\f00c";
+            position: absolute;
+            color: $black;
+            font-family: "Font Awesome 5 Pro";
+            @include transition(.3s);
+            transform: translate(-50%, -50%);
+            border-color: transparent;
+            font-size: 8px;
+        }
+        &:checked::before {
+            opacity: 1;
+        }
+    }
+    label {
+        color: $gray;
+        line-height: 1.3;
+        cursor: pointer;
+        display: inline-block;
+    }
+}

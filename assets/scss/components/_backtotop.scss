@@ -1,0 +1,23 @@
+/*----------------------------------------*/
+/*  17. backtotop
+/*----------------------------------------*/
+.backtotop {
+  right: 15px;
+  z-index: 99;
+  bottom: 50px;
+  display: none;
+  position: fixed;
+  .scroll {
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    display: block;
+    position: relative;
+    text-align: center;
+    line-height: 35px;
+    background: $theme-color;
+    border-radius: 50%;
+    font-size: 18px;
+    color: $white;
+  }
+}

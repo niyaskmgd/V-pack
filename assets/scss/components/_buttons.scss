@@ -1,0 +1,52 @@
+/* buttons */
+
+.thm_btn {
+    font-size: 13px;
+	z-index: 1;
+	padding: 19px 45px;
+	text-align: center;
+    border: none;
+	outline: none;
+	color: $white;
+	background: $theme-color;
+	display: inline-block;
+	line-height: 1.4;
+    font-weight: 700;
+	@include transition(.3s);
+    text-transform: uppercase;
+    @include border-radius(0);
+    &:hover {
+        color: $white;
+        background-color: $green;
+    }
+    &.radius_btn {
+        @include border-radius(30px);
+    }
+    &-2 {
+        background-color: $yellow-color;
+        &:hover {
+            background-color: $theme-color;
+        }
+    }
+    &-3 {
+        background-color: $green;
+        &:hover {
+            background-color: $theme-color;
+        }
+    }
+    &-4 {
+        background-color: $blue;
+        &:hover {
+            background-color: $green;
+        }
+    }
+}
+.btns {
+    a {
+        margin-right: 20px;
+        margin-top: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+/*----------------------------------------*/
+/*  17. contact
+/*----------------------------------------*/
+.google__map {
+    iframe {
+        height: 700px;
+        width: 100%;
+        border: 0;
+        @include respond(laptop) {
+            height: 500px;
+        }
+        @include respond(lg) {
+            height: 500px;
+        }
+        @include respond(md) {
+            height: 400px;
+        }
+    }
+}
+.contact__form {
+    &--wrap {
+        background: $white;
+        border: 1px solid $border;
+        padding: 80px;
+        &.mt-none-170 {
+            margin-top: -170px;
+        }
+        @include respond(lg) {
+            padding: 50px;
+        }
+        @include respond(xs) {
+            padding: 40px 20px;
+        }
+    }
+    input, textarea {
+        height: 78px;
+        margin-bottom: 20px;
+        padding: 0 30px;
+        width: 100%;
+        font-size: 15px;
+        color: $black;
+        border-radius: 0px;
+        background: $white;
+        border-radius: 0px;
+        border: 1px solid #F5F1EA;
+        @include transition(.3s);
+        &:focus,
+        &:hover {
+            border-color: $theme-color;
+        }
+    }
+    textarea {
+        padding: 20px 30px;
+        height: 210px;
+    }
+}
+.contact__info--item {
+    border: 1px solid #F5F1EA;
+    padding: 50px 20px;
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+    }
+    p,
+    a {
+        font-size: 17px;
+        line-height: 26px;
+        color: #68666C;
+        display: block;
+    }
+}
+
